@@ -1,8 +1,11 @@
 extern crate itertools;
+#[macro_use] extern crate lazy_static;
+extern crate regex;
 
 mod helpers;
 mod day1;
 mod day2;
+mod day3;
 
 use std::io::{stdin,stdout,Write};
 
@@ -23,6 +26,10 @@ fn main() {
             let strings = helpers::read_lines("resources/day2.txt").expect("Failed to load file: day2");
             println!("Checksum is: {}", day2::check_sum(&strings));
             println!("Checksum is: {}", day2::find_matching(&strings).unwrap());
+        }
+        Ok(3) => {
+            let strings = helpers::read_lines("resources/day3.txt").expect("Failed to load file: day3");
+            println!("To-do: Day 3");
         }
         _ => println!("Input was not a valid day '{}'", buffer)
     }
