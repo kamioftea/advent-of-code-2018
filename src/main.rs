@@ -29,7 +29,9 @@ fn main() {
         }
         Ok(3) => {
             let strings = helpers::read_lines("resources/day3.txt").expect("Failed to load file: day3");
-            println!("To-do: Day 3");
+            let claims = day3::parse_claims(&strings);
+            println!("Conflicted area is: {}", day3::get_conflicted_area(&claims));
+            println!("Unique claim id is: {:?}", day3::get_unique_claim_id(&claims));
         }
         _ => println!("Input was not a valid day '{}'", buffer)
     }
