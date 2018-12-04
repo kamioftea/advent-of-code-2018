@@ -38,7 +38,12 @@ fn main() {
         Ok(4) => {
             let strings = helpers::read_lines("resources/day4.txt").expect("Failed to load file: day4");
             let log_entries = day4::parse_logs(&strings);
-            println!("Guard ID x Sleepiest Minute is: {}", day4::part_1(&log_entries));
+
+            let (id1, minute1) = day4::part_1(&log_entries);
+            println!("Guard ID x Sleepiest Minute is: {} x {} = {}", id1, minute1, id1 * (minute1 as i32));
+
+            let (id2, minute2) = day4::part_2(&log_entries);
+            println!("Guard ID x Sleepiest Minute is: {} x {} = {}", id2, minute1, id2 * (minute2 as i32));
         }
         _ => println!("Input was not a valid day '{}'", buffer)
     }
