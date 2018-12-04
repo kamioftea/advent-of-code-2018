@@ -7,3 +7,4 @@ authors = ["Jeff Horton <jeff@goblinoid.co.uk>"]
 itertools = "0.7.11"
 regex = "1.1.0"
 lazy_static = "1.2.0"
+chrono = "0.4.6"
