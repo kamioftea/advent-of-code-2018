@@ -8,8 +8,10 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 
 use std::io::{stdin,stdout,Write};
+use std::fs;
 
 fn main() {
     let mut buffer = String::new();
@@ -44,6 +46,11 @@ fn main() {
 
             let (id2, minute2) = day4::part_2(&log_entries);
             println!("Guard ID x Sleepiest Minute is: {} x {} = {}", id2, minute1, id2 * (minute2 as i32));
+        }
+        Ok(5) => {
+            let string = fs::read_to_string("resources/day5.txt").unwrap().to_string();
+            println!("Polymer length: {}", day5::collapse_polymer(&string).len());
+            println!("Polymer length with Unit Removed: {}", day5::remove_best_unit_and_collapse(&string).len())
         }
         _ => println!("Input was not a valid day '{}'", buffer)
     }
